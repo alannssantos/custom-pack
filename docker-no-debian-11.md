@@ -77,6 +77,20 @@ docker run -d \
   --restart unless-stopped \
   lscr.io/linuxserver/transmission:latest
 ```
+### Jackett: Indexador para Sonarr e Radarr
+```bash
+docker run -d \
+  --name=jackett \
+  -e PUID=1000 \
+  -e PGID=1000 \
+  -e TZ=America/Fortaleza \
+  -e AUTO_UPDATE=true \
+  -p 9117:9117 \
+  -v $HOME/Docker/jackett/config:/config \
+  -v $HOME/Docker/transmission/downloads:/downloads \
+  --restart unless-stopped \
+  lscr.io/linuxserver/jackett:latest
+```
 ### Sonarr: Pesquisar e baixar series com a ajuda de um cliente torrent.
 ```bash
 docker run -d \
