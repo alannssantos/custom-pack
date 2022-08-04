@@ -50,16 +50,14 @@ sudo chmod a+r /etc/apt/keyrings/docker.gpg
 sudo usermod -a -G docker USUÁRIO
 ```
 ## Gerenciamento de conteiners.
-### Portainer: Gerencia os conteiners de forma grafica.
+### Watchtower: Agenda a atualizão dos conteiners.
 ```bash
 docker run -d \
-  --name=portainer \
-  -p 8000:8000 \
-  -p 9000:9000 \
-  --restart=always \
+  --name watchtower \
   -v /var/run/docker.sock:/var/run/docker.sock \
-  -v portainer_data:/data \
-  portainer/portainer-ce
+  containrrr/watchtower \
+  --schedule "0 0 7 * * *" \
+  --debug --cleanup
 ```
 ### Tranmission: Cliente torrent.
 ```bash
