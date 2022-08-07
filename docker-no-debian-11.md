@@ -95,6 +95,7 @@ docker run -d \
   -e PGID=1000 \
   -e TZ=America/Fortaleza \
   -p 8989:8989 \
+  -v $HOME/Docker/sonarr/config:/config \
   -v <path to tvshows>:/tv \
   -v <path to downloadclient-downloads>:/downloads \
   --restart unless-stopped \
@@ -108,6 +109,7 @@ docker run -d \
   -e PGID=1000 \
   -e TZ=America/Fortaleza \
   -p 7878:7878 \
+  -v $HOME/Docker/radarr/config:/config \
   -v <path to movies>:/movies \
   -v <path to downloadclient-downloads>:/downloads \
   --restart unless-stopped \
