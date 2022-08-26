@@ -63,7 +63,7 @@ docker run -d \
 ```bash
 docker run -d \
   -p 80:8080 \
-  -v $HOME/.docker/homer/config/:/www/assets \
+  -v $HOME/.docker/homer:/www/assets \
   --restart=always \
   --name=homer \
   b4bz/homer:latest
@@ -78,7 +78,7 @@ docker run -d \
   -p 9091:9091 \
   -p 51413:51413 \
   -p 51413:51413/udp \
-  -v $HOME/.docker/transmission/config:/config \
+  -v $HOME/.docker/transmission:/config \
   -v $HOME/Downloads/Transmission:/downloads \
   --restart unless-stopped \
   lscr.io/linuxserver/transmission:latest
@@ -91,7 +91,7 @@ docker run -d \
   -e PGID=1000 \
   -e TZ=America/Fortaleza \
   -p 9696:9696 \
-  -v $HOME/.docker/prowlarr/config:/config \
+  -v $HOME/.docker/prowlarr:/config \
   --restart unless-stopped \
   lscr.io/linuxserver/prowlarr:develop
 ```
@@ -103,7 +103,7 @@ docker run -d \
   -e PGID=1000 \
   -e TZ=America/Fortaleza \
   -p 8989:8989 \
-  -v $HOME/.docker/sonarr/config:/config \
+  -v $HOME/.docker/sonarr:/config \
   -v <path to tvshows>:/tv \
   -v <path to download client-downloads>:/downloads \
   --restart unless-stopped \
@@ -117,7 +117,7 @@ docker run -d \
   -e PGID=1000 \
   -e TZ=America/Fortaleza \
   -p 7878:7878 \
-  -v $HOME/.docker/radarr/config:/config \
+  -v $HOME/.docker/radarr:/config \
   -v <path to movies>:/movies \
   -v <path to download client-downloads>:/downloads \
   --restart unless-stopped \
@@ -131,7 +131,7 @@ docker run -d \
   -e PGID=1000 \
   -e TZ=America/Fortaleza \
   -p 6767:6767 \
-  -v $HOME/.docker/bazarr/config:/config \
+  -v $HOME/.docker/bazarr:/config \
   -v <path to tvshows>:/tv \
   -v <path to movies>:/movies \
   --restart unless-stopped \
@@ -146,6 +146,19 @@ docker run -d \
   -v $HOME/Downloads/JDownloader-2:/output:rw \
   --restart unless-stopped \
   jlesage/jdownloader-2
+```
+### Tanoshi: Pesquisa, baixa e servidor de mangas.
+```bash
+docker run -d \
+    --name=tanoshi \
+    -e PUID=1000 \
+    -e PGID=1000 \
+    -p 8080:80 \
+    -v $HOME/.docker/tanoshi:/tanoshi \
+    -v <path to mangas>:/tanoshi/manga \
+    -v <path to mangas>:/tanoshi/downloads \
+    --restart unless-stopped \
+    faldez/tanoshi
 ```
 ### Jellyfin: Servidor da biblioteca de filmes e series.
 ```bash
