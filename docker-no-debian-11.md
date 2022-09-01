@@ -168,7 +168,7 @@ docker run -d \
   -e PGID=1000 \
   -e TZ=America/Fortaleza \
   -p 8096:8096 \
-  -v $HOME/.docker/jellyfin/library:/config \
+  -v $HOME/.docker/jellyfin:/config \
   -v <path to tvshows>:/data/tvshows \
   -v <path to movies>:/data/movies \
   --restart unless-stopped \
