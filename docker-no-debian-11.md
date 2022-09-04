@@ -166,11 +166,12 @@ docker run -d \
   --name=jellyfin \
   -e PUID=1000 \
   -e PGID=1000 \
-  -e TZ=America/Fortaleza \
   -p 8096:8096 \
+  -e TZ=America/Fortaleza \
+  --device=/dev/dri:/dev/dri \
   -v $HOME/.docker/jellyfin:/config \
-  -v <path to tvshows>:/data/tvshows \
   -v <path to movies>:/data/movies \
+  -v <path to tvshows>:/data/tvshows \
   --restart unless-stopped \
   lscr.io/linuxserver/jellyfin:latest
 ```
