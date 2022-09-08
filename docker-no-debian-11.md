@@ -59,14 +59,14 @@ docker run -d \
   --schedule "0 0 7 * * *" \
   --debug --cleanup
 ```
-### Homer: Dashboard Homepage.
+### Homepage: Dashboard.
 ```bash
 docker run -d \
-  -p 80:8080 \
-  -v $HOME/.docker/homer:/www/assets \
-  --restart=always \
-  --name=homer \
-  b4bz/homer:latest
+  --name=homepage \
+  -p 80:3000 \
+  -v $HOME/.docker/homepage:/app/config \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  ghcr.io/benphelps/homepage:latest
 ```
 ### Tranmission: Cliente torrent.
 ```bash
