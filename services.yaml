@@ -1,0 +1,46 @@
+# For configuration options and examples, please see:
+# https://github.com/benphelps/homepage/wiki/Services
+
+- Entretenimentos:
+    - Jellyfin:
+        icon: https://raw.githubusercontent.com/alannssantos/custom-pack/main/dashboard-icons/jellyfin.png
+        href: http://localhost:8096/
+        description: Servidor de Filmes, Séries e Tv
+        #widget:
+        #  type: jellyfin
+        #  url: http://jellyfin.host.or.ip
+        #  key: apikeyapikeyapikeyapikeyapikey
+    - Tanoshi:
+        icon: https://raw.githubusercontent.com/alannssantos/custom-pack/main/dashboard-icons/tanoshi.png
+        href: http://localhost:8080/
+        description: Servidor de Mangás
+
+- Buscadores:
+    - Radarr:
+        icon: https://raw.githubusercontent.com/alannssantos/custom-pack/main/dashboard-icons/radarr.png
+        href: http://localhost:7878/
+        description: Buscador de Filmes
+    - Sonarr:
+        icon: https://raw.githubusercontent.com/alannssantos/custom-pack/main/dashboard-icons/sonarr.png
+        href: http://localhost:8989/
+        description: Buscador de Séries
+
+- Downloaders:
+    - Transmission:
+        icon: https://raw.githubusercontent.com/alannssantos/custom-pack/main/dashboard-icons/transmission.png
+        href: http://localhost:9091/
+        description: Cliente Torrent
+    - JDownload 2:
+        icon: https://raw.githubusercontent.com/alannssantos/custom-pack/main/dashboard-icons/jdownload2.png
+        href: http://localhost:5800/
+        description: Downloads de hosted-sites
+
+- Automatizados:
+    - Prowlarr:
+        icon: https://raw.githubusercontent.com/alannssantos/custom-pack/main/dashboard-icons/prowlarr.png
+        href: http://localhost:9696/
+        description: Gerenciador de Indexers
+    - Bazaar:
+        icon: https://raw.githubusercontent.com/alannssantos/custom-pack/main/dashboard-icons/bazarr.png
+        href: http://localhost:6767/
+        description: Downloads de hosted-sites
