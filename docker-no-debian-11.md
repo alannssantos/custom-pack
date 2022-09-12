@@ -66,14 +66,16 @@ docker run -d \
   -p 80:3000 \
   -v $HOME/.docker/homepage:/app/config \
   -v /var/run/docker.sock:/var/run/docker.sock \
+  -v <path to monitor>:/mnt/storage \
+  --restart=always \
   ghcr.io/benphelps/homepage:latest
 ```
 ### Tranmission: Cliente torrent.
 ```bash
 docker run -d \
   --name=transmission \
-  -e PUID=1000 \
-  -e PGID=1000 \
+  -e PUID=$(id -u) \
+  -e PUID=$(id -g) \
   -e TZ=America/Fortaleza \
   -p 9091:9091 \
   -p 51413:51413 \
@@ -87,8 +89,8 @@ docker run -d \
 ```bash
 docker run -d \
   --name=prowlarr \
-  -e PUID=1000 \
-  -e PGID=1000 \
+  -e PUID=$(id -u) \
+  -e PUID=$(id -g) \
   -e TZ=America/Fortaleza \
   -p 9696:9696 \
   -v $HOME/.docker/prowlarr:/config \
@@ -99,8 +101,8 @@ docker run -d \
 ```bash
 docker run -d \
   --name=sonarr \
-  -e PUID=1000 \
-  -e PGID=1000 \
+  -e PUID=$(id -u) \
+  -e PUID=$(id -g) \
   -e TZ=America/Fortaleza \
   -p 8989:8989 \
   -v $HOME/.docker/sonarr:/config \
@@ -113,8 +115,8 @@ docker run -d \
 ```bash
 docker run -d \
  --name=radarr \
-  -e PUID=1000 \
-  -e PGID=1000 \
+  -e PUID=$(id -u) \
+  -e PUID=$(id -g) \
   -e TZ=America/Fortaleza \
   -p 7878:7878 \
   -v $HOME/.docker/radarr:/config \
@@ -127,8 +129,8 @@ docker run -d \
 ```bash
 docker run -d \
   --name=bazarr \
-  -e PUID=1000 \
-  -e PGID=1000 \
+  -e PUID=$(id -u) \
+  -e PUID=$(id -g) \
   -e TZ=America/Fortaleza \
   -p 6767:6767 \
   -v $HOME/.docker/bazarr:/config \
@@ -151,8 +153,8 @@ docker run -d \
 ```bash
 docker run -d \
     --name=tanoshi \
-    -e PUID=1000 \
-    -e PGID=1000 \
+    -e PUID=$(id -u) \
+    -e PUID=$(id -g) \
     -p 8080:80 \
     -v $HOME/.docker/tanoshi:/tanoshi \
     -v <path to mangas>:/tanoshi/manga \
@@ -164,8 +166,8 @@ docker run -d \
 ```bash
 docker run -d \
   --name=jellyfin \
-  -e PUID=1000 \
-  -e PGID=1000 \
+  -e PUID=$(id -u) \
+  -e PUID=$(id -g) \
   -p 8096:8096 \
   -e TZ=America/Fortaleza \
   --device=/dev/dri:/dev/dri \
@@ -181,8 +183,8 @@ docker run -d \
 ```bash
 docker run -d \
   --name=ubooquity \
-  -e PUID=1000 \
-  -e PGID=1000 \
+  -e PUID=$(id -u) \
+  -e PUID=$(id -g) \
   -e TZ=America/Fortaleza \
   -e MAXMEM=1024 \
   -p 2202:2202 \
