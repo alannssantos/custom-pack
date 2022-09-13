@@ -67,7 +67,7 @@ docker run -d \
   -v $HOME/.docker/homepage:/app/config \
   -v /var/run/docker.sock:/var/run/docker.sock \
   -v <path to monitor>:/mnt/storage \
-  --restart=always \
+  --restart unless-stopped \
   ghcr.io/benphelps/homepage:latest
 ```
 ### Tranmission: Cliente torrent.
