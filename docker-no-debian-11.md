@@ -75,7 +75,7 @@ docker run -d \
 docker run -d \
   --name=transmission \
   -e PUID=$(id -u) \
-  -e PUID=$(id -g) \
+  -e PGID=$(id -g) \
   -e TZ=America/Fortaleza \
   -p 9091:9091 \
   -p 51413:51413 \
@@ -90,7 +90,7 @@ docker run -d \
 docker run -d \
   --name=prowlarr \
   -e PUID=$(id -u) \
-  -e PUID=$(id -g) \
+  -e PGID=$(id -g) \
   -e TZ=America/Fortaleza \
   -p 9696:9696 \
   -v $HOME/.docker/prowlarr:/config \
@@ -102,7 +102,7 @@ docker run -d \
 docker run -d \
   --name=sonarr \
   -e PUID=$(id -u) \
-  -e PUID=$(id -g) \
+  -e PGID=$(id -g) \
   -e TZ=America/Fortaleza \
   -p 8989:8989 \
   -v $HOME/.docker/sonarr:/config \
@@ -116,7 +116,7 @@ docker run -d \
 docker run -d \
  --name=radarr \
   -e PUID=$(id -u) \
-  -e PUID=$(id -g) \
+  -e PGID=$(id -g) \
   -e TZ=America/Fortaleza \
   -p 7878:7878 \
   -v $HOME/.docker/radarr:/config \
@@ -130,7 +130,7 @@ docker run -d \
 docker run -d \
   --name=bazarr \
   -e PUID=$(id -u) \
-  -e PUID=$(id -g) \
+  -e PGID=$(id -g) \
   -e TZ=America/Fortaleza \
   -p 6767:6767 \
   -v $HOME/.docker/bazarr:/config \
@@ -154,7 +154,7 @@ docker run -d \
 docker run -d \
     --name=tanoshi \
     -e PUID=$(id -u) \
-    -e PUID=$(id -g) \
+    -e PGID=$(id -g) \
     -p 8080:80 \
     -v $HOME/.docker/tanoshi:/tanoshi \
     -v <path to mangas>:/tanoshi/manga \
@@ -167,7 +167,7 @@ docker run -d \
 docker run -d \
   --name=jellyfin \
   -e PUID=$(id -u) \
-  -e PUID=$(id -g) \
+  -e PGID=$(id -g) \
   -p 8096:8096 \
   -e TZ=America/Fortaleza \
   --device=/dev/dri:/dev/dri \
@@ -184,7 +184,7 @@ docker run -d \
 docker run -d \
   --name=ubooquity \
   -e PUID=$(id -u) \
-  -e PUID=$(id -g) \
+  -e PGID=$(id -g) \
   -e TZ=America/Fortaleza \
   -e MAXMEM=1024 \
   -p 2202:2202 \
