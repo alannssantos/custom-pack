@@ -4,7 +4,7 @@
 - Entretenimentos:
     - Jellyfin:
         icon: https://raw.githubusercontent.com/alannssantos/custom-pack/main/dashboard-icons/jellyfin.png
-        href: http://localhost:8096/
+        href: http://localhost:8096
         description: Servidor de Filmes, Séries e Tv
         container: jellyfin
         #widget:
@@ -13,42 +13,45 @@
         #  key: apikeyapikeyapikeyapikeyapikey
     - Tanoshi:
         icon: https://raw.githubusercontent.com/alannssantos/custom-pack/main/dashboard-icons/tanoshi.png
-        href: http://localhost:8080/
+        href: http://localhost:8080
         description: Servidor de Mangás
         container: tanoshi
 
 - Buscadores:
     - Radarr:
         icon: https://raw.githubusercontent.com/alannssantos/custom-pack/main/dashboard-icons/radarr.png
-        href: http://localhost:7878/
+        href: http://localhost:7878
         description: Buscador de Filmes
         container: radarr
     - Sonarr:
         icon: https://raw.githubusercontent.com/alannssantos/custom-pack/main/dashboard-icons/sonarr.png
-        href: http://localhost:8989/
+        href: http://localhost:8989
         description: Buscador de Séries
         container: sonarr
 
 - Downloaders:
     - Transmission:
         icon: https://raw.githubusercontent.com/alannssantos/custom-pack/main/dashboard-icons/transmission.png
-        href: http://localhost:9091/
+        href: http://localhost:9091
         description: Cliente Torrent
         container: transmission
+        widget:
+          type: transmission
+          url: http://localhost:9091
     - JDownload 2:
         icon: https://raw.githubusercontent.com/alannssantos/custom-pack/main/dashboard-icons/jdownload2.png
-        href: http://localhost:5800/
+        href: http://localhost:5800
         description: Downloads de hosted-sites
         container: jdownloader-2
 
 - Automatizados:
     - Prowlarr:
         icon: https://raw.githubusercontent.com/alannssantos/custom-pack/main/dashboard-icons/prowlarr.png
-        href: http://localhost:9696/
+        href: http://localhost:9696
         description: Gerenciador de Indexers
         container: prowlarr
     - Bazaar:
         icon: https://raw.githubusercontent.com/alannssantos/custom-pack/main/dashboard-icons/bazarr.png
-        href: http://localhost:6767/
+        href: http://localhost:6767
         description: Downloads de hosted-sites
         container: bazarr
