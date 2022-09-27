@@ -56,7 +56,7 @@ docker run -d \
   --name watchtower \
   -v /var/run/docker.sock:/var/run/docker.sock \
   containrrr/watchtower \
-  --schedule "0 0 7 * * *" \
+  --schedule "0 0 /6 * * *" \
   --debug --cleanup
 ```
 ### Homepage: Dashboard.
