@@ -54,6 +54,7 @@ sudo usermod -a -G docker USUÁRIO
 ```bash
 docker run -d \
   --name watchtower \
+  -e TZ=America/Fortaleza \
   -v /var/run/docker.sock:/var/run/docker.sock \
   containrrr/watchtower \
   --schedule "0 0 */6 * * *" \
