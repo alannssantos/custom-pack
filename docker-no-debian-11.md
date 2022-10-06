@@ -140,28 +140,31 @@ docker run -d \
   --restart unless-stopped \
   lscr.io/linuxserver/bazarr:latest
 ```
-### JDownloader-2: Baixar arquivos de sites de hospedagens.
+### pyLoad: Baixar arquivos de sites de hospedagens.
 ```bash
 docker run -d \
-  --name=jdownloader-2 \
-  -p 5800:5800 \
-  -v $HOME/.docker/jdownloader-2:/config:rw \
-  -v $HOME/Downloads/JDownloader-2:/output:rw \
+  --name=pyload-ng \
+  -e PUID=$(id -u) \
+  -e PGID=$(id -g) \
+  -e TZ=America/Fortaleza \
+  -p 8000:8000 \
+  -v $HOME/.docker/pyload:/config \
+  -v $HOME/Downloads/pyLoad:/downloads \
   --restart unless-stopped \
-  jlesage/jdownloader-2
+  lscr.io/linuxserver/pyload-ng:latest
 ```
 ### Tanoshi: Pesquisa, baixa e servidor de mangas.
 ```bash
 docker run -d \
-    --name=tanoshi \
-    -e PUID=$(id -u) \
-    -e PGID=$(id -g) \
-    -p 8080:80 \
-    -v $HOME/.docker/tanoshi:/tanoshi \
-    -v <path to mangas>:/tanoshi/manga \
-    -v <path to mangas>:/tanoshi/downloads \
-    --restart unless-stopped \
-    faldez/tanoshi
+  --name=tanoshi \
+  -e PUID=$(id -u) \
+  -e PGID=$(id -g) \
+  -p 8080:80 \
+  -v $HOME/.docker/tanoshi:/tanoshi \
+  -v <path to mangas>:/tanoshi/manga \
+  -v <path to mangas>:/tanoshi/downloads \
+  --restart unless-stopped \
+  faldez/tanoshi
 ```
 ### Jellyfin: Servidor da biblioteca de filmes e series.
 ```bash
