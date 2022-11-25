@@ -172,6 +172,7 @@ docker run -d \
   --name=jellyfin \
   -e PUID=$(id -u) \
   -e PGID=$(id -g) \
+  --net=host \
   -p 8096:8096 \
   -p 7359:7359/udp \
   -p 1900:1900/udp \
