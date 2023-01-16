@@ -153,18 +153,18 @@ docker run -d \
   --restart unless-stopped \
   lscr.io/linuxserver/pyload-ng:latest
 ```
-### Tanoshi: Pesquisa, baixa e servidor de mangas.
+### Tachidesk: Pesquisa, baixa e servidor de mangas.
 ```bash
+mkdir -p $HOME/.docker/tachidesk && \
 docker run -d \
-  --name=tanoshi \
+  --name=tachidesk \
   -e PUID=$(id -u) \
   -e PGID=$(id -g) \
-  -p 8080:80 \
-  -v $HOME/.docker/tanoshi:/tanoshi \
-  -v <path to mangas>:/tanoshi/manga \
-  -v <path to mangas>:/tanoshi/downloads \
+  -e TZ=America/Fortaleza \
+  -p 4567:4567 \
+  -v $HOME/.docker/tachidesk:/home/suwayomi/.local/share/Tachidesk \
   --restart unless-stopped \
-  faldez/tanoshi
+  ghcr.io/suwayomi/tachidesk:develop
 ```
 ### Jellyfin: Servidor da biblioteca de filmes e series.
 ```bash
