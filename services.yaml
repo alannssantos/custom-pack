@@ -11,11 +11,11 @@
         #  type: jellyfin
         #  url: http://jellyfin.host.or.ip
         #  key: apikeyapikeyapikeyapikeyapikey
-    - Tanoshi:
-        icon: https://raw.githubusercontent.com/alannssantos/custom-pack/main/dashboard-icons/tanoshi.png
-        href: http://localhost:8080
+    - Tachidesk:
+        icon: https://raw.githubusercontent.com/alannssantos/custom-pack/main/dashboard-icons/tachidesk.png
+        href: http://localhost:4567
         description: Servidor de Mangás
-        container: tanoshi
+        container: tachidesk
 
 - Buscadores:
     - Radarr:
