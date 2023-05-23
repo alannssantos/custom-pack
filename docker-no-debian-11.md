@@ -12,6 +12,10 @@ HandleLidSwitchDocked=ignore
 ```bash
 GRUB_CMDLINE_LINUX="consoleblank=300"
 ```
+### Atualizar configurações feitas.
+`sudo systemctl restart systemd-logind.service`
+
+`sudo update-grub`
 ## Instalação do Docker.
 ### Primeiro deve remover a antiga versão do Docker.
 ```bash
