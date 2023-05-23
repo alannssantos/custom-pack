@@ -1,5 +1,18 @@
 # Debian 11
-## Instalação do Docker
+## Configuração basica para notebook-server.
+### Baixar tela sem que ele desligue ou entre em suspensão.
+`/etc/systemd/logind.conf`
+```bash
+HandleLidSwitch=ignore
+HandleLidSwitchExternalPower=ignore
+HandleLidSwitchDocked=ignore
+```
+### Tela desliga depois de 5 minutos.
+`/etc/default/grub`
+```bash
+GRUB_CMDLINE_LINUX="consoleblank=300"
+```
+## Instalação do Docker.
 ### Primeiro deve remover a antiga versão do Docker.
 ```bash
 sudo apt remove \
