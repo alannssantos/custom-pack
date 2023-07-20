@@ -157,18 +157,18 @@ docker run -d \
   --restart unless-stopped \
   lscr.io/linuxserver/bazarr:latest
 ```
-### pyLoad: Baixar arquivos de sites de hospedagens.
+### JDownloader 2: Baixar arquivos de sites de hospedagens.
 ```bash
 docker run -d \
-  --name=pyload-ng \
+  --name=jdownloader-2 \
   -e PUID=$(id -u) \
   -e PGID=$(id -g) \
   -e TZ=America/Fortaleza \
-  -p 8000:8000 \
-  -v $HOME/.docker/pyload:/config \
-  -v $HOME/Downloads/pyLoad:/downloads \
+  -p 5800:5800 \
+  -v $HOME/.docker/jdownloader-2:/config \
+  -v $HOME/Downloads/JDownloader-2:/downloads \
   --restart unless-stopped \
-  lscr.io/linuxserver/pyload-ng:latest
+  jlesage/jdownloader-2
 ```
 ### Tachidesk: Pesquisa, baixa e servidor de mangas.
 ```bash
@@ -227,4 +227,11 @@ docker run -d \
 ```bash
 docker container rm CONTEINER
 docker image rm REPOSITÓRIO
+```
+#### Saiba como atualizar todos os conteiners manualmente.
+```bash
+docker run --rm \
+-v /var/run/docker.sock:/var/run/docker.sock \
+containrrr/watchtower \
+--run-once
 ```
