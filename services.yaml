@@ -38,11 +38,11 @@
         widget:
           type: transmission
           url: http://localhost:9091
-    - pyLoad:
-        icon: https://raw.githubusercontent.com/alannssantos/custom-pack/main/dashboard-icons/pyload.png
-        href: http://localhost:8000
+    - JDownloader-2:
+        icon: https://raw.githubusercontent.com/alannssantos/custom-pack/main/dashboard-icons/jdownload2.png
+        href: http://localhost:5800
         description: Downloads de hosted-sites
-        container: pyload-ng
+        container: jdownloader-2
 
 - Automatizados:
     - Prowlarr:
