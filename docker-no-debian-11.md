@@ -165,8 +165,8 @@ docker run -d \
   -e PGID=$(id -g) \
   -e TZ=America/Fortaleza \
   -p 5800:5800 \
-  -v $HOME/.docker/jdownloader-2:/config \
-  -v $HOME/Downloads/JDownloader-2:/downloads \
+  -v $HOME/.docker/jdownloader-2:/config:rw \
+  -v $HOME/Downloads/JDownloader-2:/output:rw \
   --restart unless-stopped \
   jlesage/jdownloader-2
 ```
