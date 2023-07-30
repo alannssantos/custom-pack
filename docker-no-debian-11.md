@@ -3,6 +3,7 @@
 ### Baixar tela sem que ele desligue ou entre em suspensão.
 `/etc/systemd/logind.conf`
 ```bash
+HandlePowerKey=poweroff
 HandleLidSwitch=ignore
 HandleLidSwitchExternalPower=ignore
 HandleLidSwitchDocked=ignore
@@ -16,6 +17,20 @@ GRUB_CMDLINE_LINUX="consoleblank=300"
 `sudo systemctl restart systemd-logind.service`
 
 `sudo update-grub`
+### Ip Fixo. 
+`/etc/network/interfaces`
+```
+# Configuração de IP Fixo.
+auto enp2s0
+allow-hotplug enp2s0
+iface enp2s0 inet static
+        address 192.168.0.132
+        netmask 255.255.255.0
+        network 192.168.0.1
+        broadcast 192.168.0.255
+        gateway 192.168.0.1
+        dns-nameservers 1.1.1.1 8.8.8.8
+```
 ## Instalação do Docker.
 ### Primeiro deve remover a antiga versão do Docker.
 ```bash
