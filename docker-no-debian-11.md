@@ -36,7 +36,6 @@ iface enp2s0 inet static
 ```bash
 sudo apt remove \
   docker\
-  docker-engine \
   docker.io \
   containerd \
   runc
