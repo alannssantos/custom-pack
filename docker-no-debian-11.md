@@ -1,4 +1,4 @@
-# Debian 11
+# Debian 12
 ## Configuração basica para notebook-server.
 ### Baixar tela sem que ele desligue ou entre em suspensão.
 `/etc/systemd/logind.conf`
