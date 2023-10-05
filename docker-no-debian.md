@@ -100,7 +100,7 @@ docker run -d \
   -v /var/run/docker.sock:/var/run/docker.sock \
   -v <path to monitor>:/mnt/storage \
   --restart unless-stopped \
-  ghcr.io/benphelps/homepage:latest
+  ghcr.io/gethomepage/homepage:latest
 ```
 ### Tranmission: Cliente torrent.
 ```bash
