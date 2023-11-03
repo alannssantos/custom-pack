@@ -1,5 +1,5 @@
 # Debian 12
-## Configuração basica para notebook-server.
+## Configuração básica para notebook-server.
 ### Baixar tela sem que ele desligue ou entre em suspensão.
 `/etc/systemd/logind.conf`
 ```bash
@@ -80,8 +80,8 @@ sudo chmod a+r /etc/apt/keyrings/docker.gpg
 ```bash
 sudo usermod -a -G docker USUÁRIO
 ```
-## Gerenciamento de conteiners.
-### Watchtower: Agenda a atualizão dos conteiners.
+## Gerenciamento de contêineres.
+### Watchtower: Agenda a atualização dos contêineres.
 ```bash
 docker run -d \
   --name watchtower \
@@ -102,7 +102,7 @@ docker run -d \
   --restart unless-stopped \
   ghcr.io/gethomepage/homepage:latest
 ```
-### Tranmission: Cliente torrent.
+### Transmission: Cliente torrent.
 ```bash
 docker run -d \
   --name=transmission \
@@ -146,7 +146,7 @@ docker run -d \
 ### Radarr: Pesquisar e baixar filmes com a ajuda de um cliente torrent.
 ```bash
 docker run -d \
- --name=radarr \
+  --name=radarr \
   -e PUID=$(id -u) \
   -e PGID=$(id -g) \
   -e TZ=America/Fortaleza \
@@ -218,9 +218,20 @@ docker run -d \
   --restart unless-stopped \
   lscr.io/linuxserver/jellyfin:latest
 ```
+### Jellyseerr: Catalogo de media (Opcional).
+```bash
+docker run -d \
+  --name jellyseerr \
+  -e LOG_LEVEL=debug \
+  -e TZ=America/Fortaleza \
+  -p 5055:5055 \
+  -v $HOME/.docker/jellyseerr:/app/config \
+  --restart unless-stopped \
+  fallenbagel/jellyseerr:latest
+```
 ### Ubooquity: Servidor de Livros e Mangas.
 - Acesso a pagina de [Administrador](http://localhost:2203/ubooquity/admin)
-- Acesso a pagina de [Usuario](http://localhost:2202/ubooquity)
+- Acesso a pagina de [Usuário](http://localhost:2202/ubooquity)
 ```bash
 docker run -d \
   --name=ubooquity \
@@ -237,12 +248,12 @@ docker run -d \
   --restart unless-stopped \
   lscr.io/linuxserver/ubooquity:latest
 ```
-#### Saiba como remover um conteiner caso precise.
+#### Saiba como remover um contêiner caso precise.
 ```bash
 docker container rm CONTEINER
 docker image rm REPOSITÓRIO
 ```
-#### Saiba como atualizar todos os conteiners manualmente.
+#### Saiba como atualizar todos os contêineres manualmente.
 ```bash
 docker run --rm \
 -v /var/run/docker.sock:/var/run/docker.sock \
