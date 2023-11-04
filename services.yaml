@@ -5,6 +5,7 @@
     - "":
         widget:
             type: calendar
+            firstDayInWeek: sunday
             integrations:
               - type: sonarr
                 service_group: Buscadores
