@@ -2,48 +2,55 @@
 # https://github.com/benphelps/homepage/wiki/Services
 
 - Entretenimentos:
+    - "":
+        widget:
+            type: calendar
+            integrations:
+              - type: sonarr
+                service_group: Buscadores
+                service_name: Sonarr
+                color: blue
+              - type: radarr
+                service_group: Buscadores
+                service_name: Radarr 
+                color: yellow
     - Jellyfin:
         icon: https://raw.githubusercontent.com/alannssantos/custom-pack/main/dashboard-icons/jellyfin.png
         href: http://localhost:8096
         description: Servidor de Filmes, Séries e Tv
         container: jellyfin
-        #widget:
-        #  type: jellyfin
-        #  url: http://jellyfin.host.or.ip
-        #  key: apikeyapikeyapikeyapikeyapikey
-    - Tachidesk:
-        icon: https://raw.githubusercontent.com/alannssantos/custom-pack/main/dashboard-icons/tachidesk.png
-        href: http://localhost:4567
-        description: Servidor de Mangás
-        container: tachidesk
-
 - Buscadores:
     - Radarr:
         icon: https://raw.githubusercontent.com/alannssantos/custom-pack/main/dashboard-icons/radarr.png
         href: http://localhost:7878
         description: Buscador de Filmes
         container: radarr
+        widget:
+          type: radarr
+          url: http://localhost:7878
+          key: apikeyapikeyapikeyapikeyapikey
+          fields: []
     - Sonarr:
         icon: https://raw.githubusercontent.com/alannssantos/custom-pack/main/dashboard-icons/sonarr.png
         href: http://localhost:8989
         description: Buscador de Séries
         container: sonarr
-
+        widget:
+          type: sonarr
+          url: http://localhost:8989
+          key: apikeyapikeyapikeyapikeyapikey
+          fields: []
 - Downloaders:
     - Transmission:
         icon: https://raw.githubusercontent.com/alannssantos/custom-pack/main/dashboard-icons/transmission.png
         href: http://localhost:9091
         description: Cliente Torrent
         container: transmission
-        widget:
-          type: transmission
-          url: http://localhost:9091
     - JDownloader-2:
         icon: https://raw.githubusercontent.com/alannssantos/custom-pack/main/dashboard-icons/jdownload2.png
         href: http://localhost:5800
         description: Downloads de hosted-sites
         container: jdownloader-2
-
 - Automatizados:
     - Prowlarr:
         icon: https://raw.githubusercontent.com/alannssantos/custom-pack/main/dashboard-icons/prowlarr.png
