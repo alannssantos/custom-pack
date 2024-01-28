@@ -129,6 +129,15 @@ docker run -d \
   --restart unless-stopped \
   lscr.io/linuxserver/prowlarr:develop
 ```
+### FlareSolverr: Servidor proxy para Cloudflare e proteção DDoS-GUARD.
+```bash
+docker run -d \
+  --name=flaresolverr \
+  -p 8191:8191 \
+  -e LOG_LEVEL=info \
+  --restart unless-stopped \
+  ghcr.io/flaresolverr/flaresolverr:latest
+```
 ### Sonarr: Pesquisar e baixar series com a ajuda de um cliente torrent.
 ```bash
 docker run -d \
