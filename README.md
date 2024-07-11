@@ -219,11 +219,7 @@ docker run -d \
   -e TZ=America/Fortaleza \
   --device=/dev/dri:/dev/dri \
   -v $HOME/.docker/jellyfin:/config \
-  -v <path to books>:/data/books \
-  -v <path to mangas>:/data/mangas \
-  -v <path to comics>:/data/comics \
-  -v <path to movies>:/data/movies \
-  -v <path to tvshows>:/data/tvshows \
+  -v <path to media>:/data/media \
   --restart unless-stopped \
   lscr.io/linuxserver/jellyfin:latest
 ```
