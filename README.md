@@ -102,20 +102,22 @@ docker run -d \
   --restart unless-stopped \
   ghcr.io/gethomepage/homepage:latest
 ```
-### Transmission: Cliente torrent.
+### qBittorrent: Cliente torrent.
 ```bash
 docker run -d \
-  --name=transmission \
+  --name=qbittorrent \
   -e PUID=$(id -u) \
   -e PGID=$(id -g) \
   -e TZ=America/Fortaleza \
-  -p 9091:9091 \
-  -p 51413:51413 \
-  -p 51413:51413/udp \
-  -v $HOME/.docker/transmission:/config \
-  -v $HOME/Downloads/Transmission:/downloads \
+  -e WEBUI_PORT=8080 \
+  -e TORRENTING_PORT=6881 \
+  -p 8080:8080 \
+  -p 6881:6881 \
+  -p 6881:6881/udp \
+  -v $HOME/.docker/qbittorrent:/config \
+  -v $HOME/Downloads/qBittorrent:/downloads \
   --restart unless-stopped \
-  lscr.io/linuxserver/transmission:latest
+  lscr.io/linuxserver/qbittorrent:latest
 ```
 ### Prowlarr: Indexador para Sonarr e Radarr
 ```bash
