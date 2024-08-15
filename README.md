@@ -195,6 +195,19 @@ docker run -d \
   --restart unless-stopped \
   jlesage/jdownloader-2
 ```
+### pyLoad: Baixar arquivos de sites de hospedagens.
+```bash
+docker run -d \
+  --name=pyload-ng \
+  -e PUID=$(id -u) \
+  -e PGID=$(id -g) \
+  -e TZ=America/Fortaleza \
+  -p 8000:8000 \
+  -v $HOME/.docker/config:/config \
+  -v $HOME/Downloads/pyLoad:/downloads \
+  --restart unless-stopped \
+  lscr.io/linuxserver/pyload-ng:latest
+```
 ### Tachidesk: Pesquisa, baixa e servidor de mangas.
 ```bash
 mkdir -p $HOME/.docker/tachidesk && \
