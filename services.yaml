@@ -4,17 +4,17 @@
 - Entretenimentos:
     - "":
         widget:
-            type: calendar
-            firstDayInWeek: sunday
-            integrations:
-              - type: sonarr
-                service_group: Buscadores
-                service_name: Sonarr
-                color: blue
-              - type: radarr
-                service_group: Buscadores
-                service_name: Radarr 
-                color: yellow
+          type: calendar
+          firstDayInWeek: sunday
+          integrations:
+            - type: sonarr
+              service_group: Buscadores
+              service_name: Sonarr
+              color: blue
+            - type: radarr
+              service_group: Buscadores
+              service_name: Radarr
+              color: yellow
     - Jellyfin:
         icon: https://raw.githubusercontent.com/alannssantos/custom-pack/main/dashboard-icons/jellyfin.png
         href: http://localhost:8096
@@ -42,16 +42,16 @@
           key: apikeyapikeyapikeyapikeyapikey
           fields: []
 - Downloaders:
-    - Transmission:
-        icon: https://raw.githubusercontent.com/alannssantos/custom-pack/main/dashboard-icons/transmission.png
-        href: http://localhost:9091
+    - qBittorrent:
+        icon: https://raw.githubusercontent.com/alannssantos/custom-pack/main/dashboard-icons/qbittorrent.png
+        href: http://localhost:8080
         description: Cliente Torrent
-        container: transmission
-    - JDownloader-2:
-        icon: https://raw.githubusercontent.com/alannssantos/custom-pack/main/dashboard-icons/jdownload2.png
-        href: http://localhost:5800
+        container: qbittorrent
+    - pyLoad:
+        icon: https://raw.githubusercontent.com/alannssantos/custom-pack/main/dashboard-icons/pyload.png
+        href: http://localhost:8000
         description: Downloads de hosted-sites
-        container: jdownloader-2
+        container: pyload-ng
 - Automatizados:
     - Prowlarr:
         icon: https://raw.githubusercontent.com/alannssantos/custom-pack/main/dashboard-icons/prowlarr.png
