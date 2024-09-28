@@ -1,0 +1,41 @@
+
+/* go to "about:config" and set "toolkit.legacyUserProfileCustomizations.stylesheets" to "true" */
+/* go to your firefox profile folder (go to ''about:support" on firefox and click "open directory" in the profile coloumn) */
+/* hides the native tabs */
+#TabsToolbar{
+  -moz-window-dragging: no-drag;
+  visibility: collapse;
+  transition-delay: 0ms;
+}
+#navigator-toolbox:hover #TabsToolbar{
+  visibility: visible;
+  transition-delay: 0ms;
+}
+:root:not([customizing]) #navigator-toolbox{
+  position: relative;
+  z-index: 1;
+}
+#navigator-toolbox:hover{ transition-delay: 0s }
+#navigator-toolbox:hover > #titlebar{
+  margin-bottom: calc(0px - 2 * var(--tab-block-margin) - var(--tab-min-height));
+  transition-delay: 0s;
+}
+/* Make tabsbar bellow urlbar  */
+#titlebar { 
+    order: 1 !important; 
+}
+/* main toolbar */
+#nav-bar { 
+    order: 0 !important; 
+    border-top-width: 0px !important; 
+} 
+/* bookmarks toolbar */
+#PersonalToolbar { 
+    order: 1 !important; 
+} 
+/* Tabs bar */
+#TabsToolbar {
+    order: 2 !important; 
+}
+/* url in center when is not focused */
+#urlbar:not([focused]) {text-align: center;}
