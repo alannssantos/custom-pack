@@ -31,7 +31,7 @@
 } 
 /* bookmarks toolbar */
 #PersonalToolbar { 
-    order: 1 !important; 
+    order: 0 !important; 
 } 
 /* Tabs bar */
 #TabsToolbar {
