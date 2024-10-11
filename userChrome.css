@@ -42,4 +42,4 @@
     order: 2 !important; 
 }
 /* url in center when is not focused */
-#urlbar:not([focused]) {text-align: center;}
+#urlbar .urlbar-input{ text-align: center !important; }
